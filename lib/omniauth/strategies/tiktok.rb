@@ -15,6 +15,7 @@ module OmniAuth
         site: 'https://open-api.tiktok.com',
         authorize_url: 'https://open-api.tiktok.com/platform/oauth/connect',
         token_url: 'https://open-api.tiktok.com/oauth/access_token',
+        auth_scheme: :request_body,
         extract_access_token: proc do |client, hash|
           hash = hash['data']
           token = hash.delete('access_token') || hash.delete(:access_token)
